@@ -1,0 +1,141 @@
+:root {
+  --primary-green: #10b981;
+  --primary-green-dark: #059669;
+  --primary-green-light: #34d399;
+  --secondary-green: #ecfdf5;
+  --accent-green: #d1fae5;
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+  --background: #ffffff;
+  --surface: #f9fafb;
+  --border: #e5e7eb;
+  --error: #ef4444;
+  --success: #10b981;
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  background: var(--background);
+}
+
+body {
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  color: var(--text-primary);
+  background: var(--background);
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: 1rem;
+  color: inherit;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  color: var(--primary-green);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover, a:focus {
+  color: var(--primary-green-dark);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.header {
+  background: var(--surface);
+  padding: 1rem 0.5rem;
+  box-shadow: 0 2px 8px 0 rgba(16, 185, 129, 0.04);
+  text-align: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-green-dark);
+}
+
+.logo span {
+  display: block;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+}
+
+.footer {
+  background: var(--surface);
+  text-align: center;
+  padding: 1rem 0.5rem;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  border-top: 1px solid var(--border);
+  margin-top: 2rem;
+}
+
+/* Modo escuro automático e manual */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a1a0a;
+    --surface: #0f2a0f;
+    --text-primary: #e8f5e8;
+    --text-secondary: #a1c2a1;
+    --border: #1a3a1a;
+    --accent-green: #1a4a1a;
+    --primary-green: #22c55e;
+    --primary-green-dark: #16a34a;
+    --primary-green-light: #4ade80;
+  }
+}
+body.dark-mode {
+  --background: #0a1a0a;
+  --surface: #0f2a0f;
+  --text-primary: #e8f5e8;
+  --text-secondary: #a1c2a1;
+  --border: #1a3a1a;
+  --accent-green: #1a4a1a;
+  --primary-green: #22c55e;
+  --primary-green-dark: #16a34a;
+  --primary-green-light: #4ade80;
+}
+body.dark-mode, body.dark-mode * {
+  transition: background 0.3s, color 0.3s, border 0.3s;
+}

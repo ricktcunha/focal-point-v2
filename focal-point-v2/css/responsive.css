@@ -1,0 +1,71 @@
+/* Mobile first: lista vertical já está em components.css */
+
+/* Tablet: grid 2 colunas, filtros laterais */
+@media (min-width: 768px) {
+  .main {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+  .filters {
+    min-width: 220px;
+    max-width: 260px;
+    margin-right: 1.5rem;
+    background: var(--surface);
+    border-radius: 1rem;
+    box-shadow: 0 2px 8px 0 rgba(16, 185, 129, 0.04);
+    padding: 1.2rem 1rem;
+    height: fit-content;
+    position: sticky;
+    top: 1.5rem;
+  }
+  .contacts-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+  }
+}
+
+/* Desktop: grid 3-4 colunas, filtros laterais maiores */
+@media (min-width: 1024px) {
+  .main {
+    gap: 2.5rem;
+  }
+  .filters {
+    min-width: 260px;
+    max-width: 320px;
+    padding: 1.5rem 1.2rem;
+  }
+  .contacts-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 2rem 0;
+  }
+}
+
+@media (min-width: 1400px) {
+  .contacts-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Ajustes para filtros no topo em mobile */
+@media (max-width: 767px) {
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem 1.2rem;
+    background: none;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0.5rem 0.5rem 0 0.5rem;
+    margin: 0 0 0.5rem 0;
+    position: static;
+  }
+  .filters label {
+    flex: 1 1 120px;
+    min-width: 120px;
+  }
+}

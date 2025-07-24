@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diretório de Contatos | Adubos Real</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <header class="header">
+    <h1 class="logo">Adubos Real <span>Contatos Internos</span></h1>
+    <button id="toggle-dark" class="action-btn" aria-label="Alternar modo escuro/claro" title="Alternar modo escuro/claro" style="position:absolute;top:1rem;right:1rem;z-index:20;">
+      <span id="dark-icon" aria-hidden="true">🌙</span>
+    </button>
+  </header>
+  <main>
+    <section class="search-section">
+      <label for="search-input" class="sr-only">Buscar contato</label>
+      <input type="text" id="search-input" class="search-input" placeholder="Buscar por setor, nome, e-mail ou telefone..." autocomplete="off">
+      <button id="clear-search" class="clear-btn" title="Limpar busca" aria-label="Limpar busca">&times;</button>
+      <div id="search-suggestions" class="suggestions" aria-live="polite"></div>
+    </section>
+    <aside class="filters" aria-label="Filtros de busca">
+      <!-- Filtros dinâmicos serão inseridos via JS -->
+    </aside>
+    <section id="contacts-container" class="contacts-container" aria-live="polite">
+      <!-- Cards de contatos serão renderizados aqui -->
+    </section>
+    <div id="loading-indicator" class="loading" hidden>Carregando...</div>
+    <div id="empty-state" class="empty-state" hidden>Nenhum contato encontrado.</div>
+  </main>
+  <footer class="footer">
+    <small>&copy; 2025 Adubos Real. Todos os direitos reservados.</small>
+  </footer>
+  <script src="js/utils.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/dark-mode.js"></script>
+</body>
+</html>
